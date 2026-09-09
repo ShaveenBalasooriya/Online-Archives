@@ -42,6 +42,10 @@ dependencies:
   # rule violations, mirroring the backend's Result pattern.
   fpdart: ^1.1.1
 
+  # Id generation for mock "create" operations — v7 to match the backend's
+  # time-ordered Guids.
+  uuid: ^4.5.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -68,6 +72,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/data/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
