@@ -9,6 +9,7 @@ class Book extends BaseEntity {
     required this.publishedYear,
     required this.totalCopies,
     required this.availableCopies,
+    required this.coverImageUrl,
   });
 
   final String title;
@@ -17,4 +18,8 @@ class Book extends BaseEntity {
   final int publishedYear;
   final int totalCopies;
   final int availableCopies;
+
+  /// Not part of the backend contract — the API's Book has no image field.
+  /// Nullable so a real API response (which won't carry one) still maps.
+  final String? coverImageUrl;
 }

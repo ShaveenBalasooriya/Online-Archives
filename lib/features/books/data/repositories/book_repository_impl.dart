@@ -43,6 +43,8 @@ class BookRepositoryImpl implements BookRepository {
       publishedYear: publishedYear,
       totalCopies: totalCopies,
       availableCopies: totalCopies,
+      // The create request carries no image — the backend has no such field.
+      coverImageUrl: null,
     );
 
     try {
@@ -129,6 +131,7 @@ class BookRepositoryImpl implements BookRepository {
       publishedYear: publishedYear,
       totalCopies: totalCopies,
       availableCopies: totalCopies - borrowedCount,
+      coverImageUrl: existing.coverImageUrl,
     );
 
     try {

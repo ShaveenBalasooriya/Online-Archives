@@ -6,7 +6,8 @@
     "isbn": "9780134494166",
     "publishedYear": 2017,
     "totalCopies": 5,
-    "availableCopies": 3
+    "availableCopies": 3,
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780134494166-L.jpg?default=false"
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000002",
@@ -15,16 +16,18 @@
     "isbn": "9780321125217",
     "publishedYear": 2003,
     "totalCopies": 4,
-    "availableCopies": 4
+    "availableCopies": 4,
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780321125217-L.jpg?default=false"
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000003",
-    "title": "Effective Dart",
-    "author": "Kathy Walrath",
-    "isbn": "9781098108777",
-    "publishedYear": 2022,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "isbn": "9780132350884",
+    "publishedYear": 2008,
     "totalCopies": 6,
-    "availableCopies": 0
+    "availableCopies": 0,
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg?default=false"
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000004",
@@ -33,7 +36,8 @@
     "isbn": "9781617296147",
     "publishedYear": 2020,
     "totalCopies": 3,
-    "availableCopies": 1
+    "availableCopies": 1,
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9781617296147-L.jpg?default=false"
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000005",
@@ -42,7 +46,8 @@
     "isbn": "0201633612",
     "publishedYear": 1994,
     "totalCopies": 2,
-    "availableCopies": 2
+    "availableCopies": 2,
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/0201633612-L.jpg?default=false"
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000006",
@@ -51,7 +56,8 @@
     "isbn": "9780134757599",
     "publishedYear": 2018,
     "totalCopies": 4,
-    "availableCopies": 2
+    "availableCopies": 2,
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780134757599-L.jpg?default=false"
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000007",
@@ -60,7 +66,8 @@
     "isbn": "9780135957059",
     "publishedYear": 2019,
     "totalCopies": 5,
-    "availableCopies": 5
+    "availableCopies": 5,
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg?default=false"
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000008",
@@ -69,6 +76,7 @@
     "isbn": "0321146530",
     "publishedYear": 2002,
     "totalCopies": 3,
-    "availableCopies": 0
+    "availableCopies": 0,
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/0321146530-L.jpg?default=false"
   }
 ]

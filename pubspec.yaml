@@ -46,6 +46,9 @@ dependencies:
   # time-ordered Guids.
   uuid: ^4.5.1
 
+  # State management for the presentation layer.
+  flutter_riverpod: ^2.6.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

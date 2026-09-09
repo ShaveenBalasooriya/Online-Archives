@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Required to load book cover images over the network. The debug and
+         profile manifests declare this too, but release builds need it here. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="online_archive"
         android:name="${applicationName}"
