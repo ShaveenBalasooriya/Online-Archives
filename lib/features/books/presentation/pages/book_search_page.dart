@@ -2,18 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 import 'package:online_archive/features/books/presentation/pages/book_details_page.dart';
+import 'package:online_archive/features/books/presentation/pages/book_search_details_page.dart';
 import 'package:online_archive/features/books/presentation/providers/books_list_provider.dart';
 import 'package:online_archive/features/books/presentation/widgets/book_card.dart';
+import 'package:online_archive/features/books/presentation/widgets/book_search_bar.dart';
 
 const _railHeight = 300.0;
 const _railCardWidth = 160.0;
 const _horizontalPadding = 16.0;
-
-void _openBookDetails(BuildContext context, String bookId) {
-  Navigator.of(context).push(
-    MaterialPageRoute<void>(builder: (_) => BookDetailsPage(bookId: bookId)),
-  );
-}
 
 class BookSearchPage extends ConsumerWidget {
   const BookSearchPage({super.key});
@@ -27,16 +23,16 @@ class BookSearchPage extends ConsumerWidget {
         child: Column(
           children: [
             const _PageHeader(),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
                 _horizontalPadding,
                 0,
                 _horizontalPadding,
                 8,
               ),
-              child: SearchBar(
-                hintText: 'Search books',
-                leading: Icon(Icons.search),
+              child: BookSearchBar(
+                onSubmitted: (query) =>
+                    BookSearchDetailsPage.open(context, query),
               ),
             ),
             Expanded(
@@ -119,18 +115,18 @@ class _BookSearchContent extends StatelessWidget {
         ),
         const SliverToBoxAdapter(child: _SectionHeader('All books')),
         SliverPadding(
-          padding: const EdgeInsets.fromLTRB(_horizontalPadding, 0, _horizontalPadding, 24),
+          padding: const EdgeInsets.fromLTRB(
+            _horizontalPadding,
+            0,
+            _horizontalPadding,
+            24,
+          ),
           sliver: SliverGrid.builder(
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200,
-              mainAxisSpacing: 16,
-              crossAxisSpacing: 16,
-              childAspectRatio: 0.58,
-            ),
+            gridDelegate: bookCardGridDelegate,
             itemCount: books.length,
             itemBuilder: (context, index) => BookCard(
               book: books[index],
-              onTap: () => _openBookDetails(context, books[index].id),
+              onTap: () => BookDetailsPage.open(context, books[index].id),
             ),
           ),
         ),
@@ -162,7 +158,7 @@ class _BookRail extends StatelessWidget {
               width: _railCardWidth,
               child: BookCard(
                 book: books[index],
-                onTap: () => _openBookDetails(context, books[index].id),
+                onTap: () => BookDetailsPage.open(context, books[index].id),
               ),
             ),
           ),

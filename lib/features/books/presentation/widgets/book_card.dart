@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 
-/// Filled card showing a book's cover, title, author and published year.
-///
-/// Expects a parent with a bounded height (a sized rail or a grid cell) —
-/// the cover expands to fill whatever space the text leaves over.
+const bookCardGridDelegate = SliverGridDelegateWithMaxCrossAxisExtent(
+  maxCrossAxisExtent: 200,
+  mainAxisSpacing: 16,
+  crossAxisSpacing: 16,
+  childAspectRatio: 0.58,
+);
 class BookCard extends StatelessWidget {
   const BookCard({required this.book, this.onTap, super.key});
 

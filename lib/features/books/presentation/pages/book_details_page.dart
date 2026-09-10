@@ -11,6 +11,12 @@ class BookDetailsPage extends ConsumerWidget {
 
   final String bookId;
 
+  static void open(BuildContext context, String bookId) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(builder: (_) => BookDetailsPage(bookId: bookId)),
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bookAsync = ref.watch(bookDetailsProvider(bookId));
