@@ -49,6 +49,10 @@ dependencies:
   # State management for the presentation layer.
   flutter_riverpod: ^2.6.1
 
+  # Merriweather (brand/headings) and Noto Sans (plain/body) for the M3 type
+  # scale. Fetched at runtime and cached, not bundled as assets.
+  google_fonts: ^8.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -38,7 +38,7 @@ class BookCard extends StatelessWidget {
                   ),
                   Text(
                     book.author,
-                    style: theme.textTheme.bodyMedium?.copyWith(
+                    style: theme.textTheme.bodySmall?.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
                     maxLines: 1,
@@ -47,7 +47,7 @@ class BookCard extends StatelessWidget {
                   const SizedBox(height: 6),
                   Text(
                     '${book.publishedYear}',
-                    style: theme.textTheme.bodySmall?.copyWith(
+                    style: theme.textTheme.labelSmall?.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
                   ),

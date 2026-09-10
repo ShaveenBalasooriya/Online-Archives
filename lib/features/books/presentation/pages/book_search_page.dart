@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
+import 'package:online_archive/features/books/presentation/pages/book_details_page.dart';
 import 'package:online_archive/features/books/presentation/providers/books_list_provider.dart';
 import 'package:online_archive/features/books/presentation/widgets/book_card.dart';
 
 const _railHeight = 300.0;
 const _railCardWidth = 160.0;
 const _horizontalPadding = 16.0;
+
+void _openBookDetails(BuildContext context, String bookId) {
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(builder: (_) => BookDetailsPage(bookId: bookId)),
+  );
+}
 
 class BookSearchPage extends ConsumerWidget {
   const BookSearchPage({super.key});
@@ -16,27 +23,68 @@ class BookSearchPage extends ConsumerWidget {
     final booksAsync = ref.watch(booksListProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Books')),
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.fromLTRB(
-              _horizontalPadding,
-              8,
-              _horizontalPadding,
-              0,
+      body: SafeArea(
+        child: Column(
+          children: [
+            const _PageHeader(),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(
+                _horizontalPadding,
+                0,
+                _horizontalPadding,
+                8,
+              ),
+              child: SearchBar(
+                hintText: 'Search books',
+                leading: Icon(Icons.search),
+              ),
             ),
-            child: SearchBar(
-              hintText: 'Search books',
-              leading: Icon(Icons.search),
+            Expanded(
+              child: booksAsync.when(
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (error, stackTrace) =>
+                    Center(child: Text('Failed to load books: $error')),
+                data: (books) => _BookSearchContent(books: books),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _PageHeader extends StatelessWidget {
+  const _PageHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+        _horizontalPadding,
+        24,
+        _horizontalPadding,
+        16,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'ONLINE ARCHIVE',
+            style: theme.textTheme.labelMedium?.copyWith(
+              color: theme.colorScheme.primary,
+              letterSpacing: 1.6,
             ),
           ),
-          Expanded(
-            child: booksAsync.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (error, stackTrace) =>
-                  Center(child: Text('Failed to load books: $error')),
-              data: (books) => _BookSearchContent(books: books),
+          const SizedBox(height: 6),
+          Text('Discover', style: theme.textTheme.displaySmall),
+          const SizedBox(height: 6),
+          Text(
+            'Browse and borrow from the collection',
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
             ),
           ),
         ],
@@ -80,7 +128,10 @@ class _BookSearchContent extends StatelessWidget {
               childAspectRatio: 0.58,
             ),
             itemCount: books.length,
-            itemBuilder: (context, index) => BookCard(book: books[index]),
+            itemBuilder: (context, index) => BookCard(
+              book: books[index],
+              onTap: () => _openBookDetails(context, books[index].id),
+            ),
           ),
         ),
       ],
@@ -109,7 +160,10 @@ class _BookRail extends StatelessWidget {
             separatorBuilder: (context, index) => const SizedBox(width: 12),
             itemBuilder: (context, index) => SizedBox(
               width: _railCardWidth,
-              child: BookCard(book: books[index]),
+              child: BookCard(
+                book: books[index],
+                onTap: () => _openBookDetails(context, books[index].id),
+              ),
             ),
           ),
         ),
@@ -126,8 +180,13 @@ class _SectionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(_horizontalPadding, 24, _horizontalPadding, 12),
-      child: Text(title, style: Theme.of(context).textTheme.titleLarge),
+      padding: const EdgeInsets.fromLTRB(
+        _horizontalPadding,
+        24,
+        _horizontalPadding,
+        12,
+      ),
+      child: Text(title, style: Theme.of(context).textTheme.headlineSmall),
     );
   }
 }

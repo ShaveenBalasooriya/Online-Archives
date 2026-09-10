@@ -7,7 +7,8 @@
     "publishedYear": 2017,
     "totalCopies": 5,
     "availableCopies": 3,
-    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780134494166-L.jpg?default=false"
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780134494166-L.jpg?default=false",
+    "description": "A guide to the principles and practices of software structure, arguing that the same rules apply whether you are building a monolith, a microservice or a mobile app. Martin works up from programming paradigms and SOLID principles to component design, boundaries and the dependency rule."
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000002",
@@ -17,7 +18,8 @@
     "publishedYear": 2003,
     "totalCopies": 4,
     "availableCopies": 4,
-    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780321125217-L.jpg?default=false"
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780321125217-L.jpg?default=false",
+    "description": "The book that introduced ubiquitous language, aggregates and bounded contexts to mainstream software design. Evans makes the case that the hardest part of building software is understanding the problem domain, and that the model should live in the code rather than in a document."
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000003",
@@ -27,7 +29,8 @@
     "publishedYear": 2008,
     "totalCopies": 6,
     "availableCopies": 0,
-    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg?default=false"
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg?default=false",
+    "description": "A hands-on look at what separates code that merely works from code that reads well, covering naming, functions, comments, formatting and error handling. The second half walks through real refactoring case studies, showing messy code being cleaned up step by step."
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000004",
@@ -37,7 +40,8 @@
     "publishedYear": 2020,
     "totalCopies": 3,
     "availableCopies": 1,
-    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9781617296147-L.jpg?default=false"
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9781617296147-L.jpg?default=false",
+    "description": "A practical introduction to building cross-platform apps with Flutter and Dart, from the widget tree and layout system through state management, animation and platform integration. Each chapter builds on a running example rather than isolated snippets."
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000005",
@@ -47,7 +51,8 @@
     "publishedYear": 1994,
     "totalCopies": 2,
     "availableCopies": 2,
-    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/0201633612-L.jpg?default=false"
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/0201633612-L.jpg?default=false",
+    "description": "The original catalogue of twenty-three reusable solutions to recurring object-oriented design problems, from Factory and Singleton through Observer and Visitor. Written by the Gang of Four, it gave the industry a shared vocabulary for discussing software structure."
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000006",
@@ -57,7 +62,8 @@
     "publishedYear": 2018,
     "totalCopies": 4,
     "availableCopies": 2,
-    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780134757599-L.jpg?default=false"
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780134757599-L.jpg?default=false",
+    "description": "A catalogue of small, behaviour-preserving code transformations, each with a motivation, a mechanic and a worked example. This second edition reworks the examples in JavaScript and puts heavy emphasis on keeping tests green throughout every change."
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000007",
@@ -67,7 +73,8 @@
     "publishedYear": 2019,
     "totalCopies": 5,
     "availableCopies": 5,
-    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg?default=false"
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg?default=false",
+    "description": "A wide-ranging collection of advice on the craft of programming, covering everything from DRY and orthogonality to debugging habits, estimation and career growth. The twentieth anniversary edition revisits and rewrites the original tips for a modern audience."
   },
   {
     "id": "018f2f3a-1b1e-7c3a-8b1a-000000000008",
@@ -77,6 +84,7 @@
     "publishedYear": 2002,
     "totalCopies": 3,
     "availableCopies": 0,
-    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/0321146530-L.jpg?default=false"
+    "coverImageUrl": "https://covers.openlibrary.org/b/isbn/0321146530-L.jpg?default=false",
+    "description": "Beck demonstrates the red-green-refactor cycle by building two complete examples from scratch, one a multi-currency money model and one a testing framework. The closing section distils the patterns and rhythms that make test-first development sustainable."
   }
 ]

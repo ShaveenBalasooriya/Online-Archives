@@ -10,6 +10,7 @@ class BookModel extends Book {
     required super.totalCopies,
     required super.availableCopies,
     required super.coverImageUrl,
+    required super.description,
   });
 
   factory BookModel.fromJson(Map<String, dynamic> json) {
@@ -22,6 +23,7 @@ class BookModel extends Book {
       totalCopies: json['totalCopies'] as int,
       availableCopies: json['availableCopies'] as int,
       coverImageUrl: json['coverImageUrl'] as String?,
+      description: json['description'] as String?,
     );
   }
 
@@ -35,6 +37,7 @@ class BookModel extends Book {
       'totalCopies': totalCopies,
       'availableCopies': availableCopies,
       'coverImageUrl': coverImageUrl,
+      'description': description,
     };
   }
 }

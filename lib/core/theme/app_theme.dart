@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_archive/core/theme/app_color_schemes.dart';
+import 'package:online_archive/core/theme/app_text_theme.dart';
 
 abstract final class AppTheme {
   static ThemeData get light => _fromScheme(AppColorSchemes.light);
@@ -13,6 +14,7 @@ abstract final class AppTheme {
       _fromScheme(AppColorSchemes.darkHighContrast);
 
   static ThemeData _fromScheme(ColorScheme colorScheme) {
-    return ThemeData(colorScheme: colorScheme, useMaterial3: true);
+    final base = ThemeData(colorScheme: colorScheme, useMaterial3: true);
+    return base.copyWith(textTheme: AppTextTheme.from(base.textTheme));
   }
 }
