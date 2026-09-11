@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:online_archive/core/constants/app_assets.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 import 'package:online_archive/features/books/presentation/pages/book_details_page.dart';
-import 'package:online_archive/features/books/presentation/providers/book_search_results_provider.dart';
+import 'package:online_archive/features/books/presentation/providers/book_providers.dart';
 import 'package:online_archive/features/books/presentation/widgets/book_card.dart';
 import 'package:online_archive/features/books/presentation/widgets/book_search_bar.dart';
 

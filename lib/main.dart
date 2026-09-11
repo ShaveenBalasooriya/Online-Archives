@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       highContrastDarkTheme: AppTheme.darkHighContrast,
       themeMode: ThemeMode.light,
       home: const BookSearchPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
-import 'package:online_archive/features/books/presentation/providers/book_details_provider.dart';
+import 'package:online_archive/features/books/presentation/providers/book_providers.dart';
 
 const _horizontalPadding = 16.0;
 const _coverWidth = 200.0;
@@ -78,10 +78,6 @@ class _BookDetails extends StatelessWidget {
                 const SizedBox(height: 24),
                 _MetaRow(label: 'Published', value: '${book.publishedYear}'),
                 _MetaRow(label: 'ISBN', value: book.isbn),
-                _MetaRow(
-                  label: 'Copies',
-                  value: '${book.availableCopies} of ${book.totalCopies}',
-                ),
                 if (description != null) ...[
                   const SizedBox(height: 24),
                   Text('About this book', style: theme.textTheme.titleLarge),
