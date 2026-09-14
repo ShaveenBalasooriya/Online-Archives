@@ -400,7 +400,7 @@ final class BookSearchResultsProvider
   }
 }
 
-String _$bookSearchResultsHash() => r'9cd256144ee0ec782c1393278f0c42cb447298e0';
+String _$bookSearchResultsHash() => r'd1ff0408256a0350852c4f24143ba30ec68beb6e';
 
 final class BookSearchResultsFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<List<Book>>, String> {

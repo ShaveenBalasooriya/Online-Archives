@@ -13,7 +13,7 @@ class BookDetailsPage extends ConsumerWidget {
   final String bookId;
 
   static void open(BuildContext context, String bookId) {
-    context.push('/book/details/${bookId}');
+    context.push('/book/details/$bookId');
   }
 
   @override
