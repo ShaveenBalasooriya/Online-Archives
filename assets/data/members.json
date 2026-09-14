@@ -1,0 +1,11 @@
+[
+  {
+    "id": "018f2f3a-1b1e-7c3a-8b1a-100000000001",
+    "fullName": "Shaveen Balasooriya",
+    "email": "shaveen.balasooriya@example.com",
+    "phoneNumber": "0771234567",
+    "registeredDate": "2025-03-14T09:30:00Z",
+    "isActive": true,
+    "password": "password123"
+  }
+]
