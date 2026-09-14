@@ -9,14 +9,6 @@ abstract interface class BookLocalDataSource {
 
   /// Throws [NotFoundException] if no book has [id].
   Future<BookModel> getBookById(String id);
-
-  Future<void> createBook(BookModel book);
-
-  /// Throws [NotFoundException] if no book has [book]'s id.
-  Future<void> updateBook(BookModel book);
-
-  /// Throws [NotFoundException] if no book has [id].
-  Future<void> deleteBook(String id);
 }
 
 /// Reads from the bundled `assets/data/books.json` asset once, then serves
@@ -54,31 +46,5 @@ class BookLocalDataSourceImpl implements BookLocalDataSource {
       if (book.id == id) return book;
     }
     throw NotFoundException("Book with ID '$id' was not found.");
-  }
-
-  @override
-  Future<void> createBook(BookModel book) async {
-    final books = await _loadCache();
-    books.add(book);
-  }
-
-  @override
-  Future<void> updateBook(BookModel book) async {
-    final books = await _loadCache();
-    final index = books.indexWhere((b) => b.id == book.id);
-    if (index == -1) {
-      throw NotFoundException("Book with ID '${book.id}' was not found.");
-    }
-    books[index] = book;
-  }
-
-  @override
-  Future<void> deleteBook(String id) async {
-    final books = await _loadCache();
-    final index = books.indexWhere((b) => b.id == id);
-    if (index == -1) {
-      throw NotFoundException("Book with ID '$id' was not found.");
-    }
-    books.removeAt(index);
   }
 }
