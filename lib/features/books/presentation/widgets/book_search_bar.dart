@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class BookSearchBar extends StatefulWidget {
-  const BookSearchBar({required this.onSubmitted, this.initialQuery, super.key});
+  const BookSearchBar({
+    required this.onSubmitted,
+    this.initialQuery,
+    super.key,
+  });
 
   final ValueChanged<String> onSubmitted;
-  
+
   final String? initialQuery;
 
   @override
