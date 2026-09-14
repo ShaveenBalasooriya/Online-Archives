@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 import 'package:online_archive/features/books/presentation/pages/book_details_page.dart';
 import 'package:online_archive/features/books/presentation/pages/book_search_details_page.dart';
@@ -126,7 +127,7 @@ class _BookSearchContent extends StatelessWidget {
             itemCount: books.length,
             itemBuilder: (context, index) => BookCard(
               book: books[index],
-              onTap: () => BookDetailsPage.open(context, books[index].id),
+              onTap: () => context.go('/book/details/${books[index].id}'),
             ),
           ),
         ),

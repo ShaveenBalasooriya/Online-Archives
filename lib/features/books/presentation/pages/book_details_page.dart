@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 import 'package:online_archive/features/books/presentation/providers/book_providers.dart';
 
@@ -12,9 +13,7 @@ class BookDetailsPage extends ConsumerWidget {
   final String bookId;
 
   static void open(BuildContext context, String bookId) {
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(builder: (_) => BookDetailsPage(bookId: bookId)),
-    );
+    context.push('/book/details/${bookId}');
   }
 
   @override

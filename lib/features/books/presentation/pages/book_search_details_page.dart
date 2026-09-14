@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:online_archive/core/constants/app_assets.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
-import 'package:online_archive/features/books/presentation/pages/book_details_page.dart';
 import 'package:online_archive/features/books/presentation/providers/book_providers.dart';
 import 'package:online_archive/features/books/presentation/widgets/book_card.dart';
 import 'package:online_archive/features/books/presentation/widgets/book_search_bar.dart';
@@ -15,20 +15,17 @@ class BookSearchDetailsPage extends ConsumerWidget {
   final String query;
 
   static void open(BuildContext context, String query) {
-    Navigator.of(context).push(_route(query));
+    context.push(_location(query));
   }
 
   /// Used when searching again from this page — swaps the results rather than
   /// stacking a new page per search, so back always returns to discover.
   static void replace(BuildContext context, String query) {
-    Navigator.of(context).pushReplacement(_route(query));
+    context.pushReplacement(_location(query));
   }
 
-  static MaterialPageRoute<void> _route(String query) {
-    return MaterialPageRoute<void>(
-      builder: (_) => BookSearchDetailsPage(query: query),
-    );
-  }
+  static String _location(String query) =>
+      '/book/search?q=${Uri.encodeQueryComponent(query)}';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -116,7 +113,7 @@ class _ResultsGrid extends StatelessWidget {
             itemCount: books.length,
             itemBuilder: (context, index) => BookCard(
               book: books[index],
-              onTap: () => BookDetailsPage.open(context, books[index].id),
+              onTap: () => context.go('/book/details/${books[index].id}'),
             ),
           ),
         ),
