@@ -1,0 +1,20 @@
+[
+  {
+    "id": "018f2f3a-1b1e-7c3a-8b1a-200000000001",
+    "bookId": "018f2f3a-1b1e-7c3a-8b1a-000000000003",
+    "memberId": "018f2f3a-1b1e-7c3a-8b1a-100000000001",
+    "borrowedDate": "2026-09-04T09:00:00Z",
+    "dueDate": "2026-09-18T09:00:00Z",
+    "returnedDate": null,
+    "status": 0
+  },
+  {
+    "id": "018f2f3a-1b1e-7c3a-8b1a-200000000002",
+    "bookId": "018f2f3a-1b1e-7c3a-8b1a-000000000004",
+    "memberId": "018f2f3a-1b1e-7c3a-8b1a-100000000001",
+    "borrowedDate": "2026-08-25T09:00:00Z",
+    "dueDate": "2026-09-08T09:00:00Z",
+    "returnedDate": null,
+    "status": 0
+  }
+]
