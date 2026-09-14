@@ -102,8 +102,13 @@ String _$bookRepositoryHash() => r'0ca4554d214fab4218d9eafc2553883dafc7874a';
 final getAllBooksProvider = GetAllBooksProvider._();
 
 final class GetAllBooksProvider
-    extends $FunctionalProvider<GetAllBooks, GetAllBooks, GetAllBooks>
-    with $Provider<GetAllBooks> {
+    extends
+        $FunctionalProvider<
+          GetAllBooksUsecase,
+          GetAllBooksUsecase,
+          GetAllBooksUsecase
+        >
+    with $Provider<GetAllBooksUsecase> {
   GetAllBooksProvider._()
     : super(
         from: null,
@@ -120,31 +125,37 @@ final class GetAllBooksProvider
 
   @$internal
   @override
-  $ProviderElement<GetAllBooks> $createElement($ProviderPointer pointer) =>
-      $ProviderElement(pointer);
+  $ProviderElement<GetAllBooksUsecase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
 
   @override
-  GetAllBooks create(Ref ref) {
+  GetAllBooksUsecase create(Ref ref) {
     return getAllBooks(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(GetAllBooks value) {
+  Override overrideWithValue(GetAllBooksUsecase value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<GetAllBooks>(value),
+      providerOverride: $SyncValueProvider<GetAllBooksUsecase>(value),
     );
   }
 }
 
-String _$getAllBooksHash() => r'3e3ea27ed41c490e36f70c628afdb4a8fd24f588';
+String _$getAllBooksHash() => r'1cc2aacdcf76db24eccb8254a888375fb5d936eb';
 
 @ProviderFor(getBookById)
 final getBookByIdProvider = GetBookByIdProvider._();
 
 final class GetBookByIdProvider
-    extends $FunctionalProvider<GetBookById, GetBookById, GetBookById>
-    with $Provider<GetBookById> {
+    extends
+        $FunctionalProvider<
+          GetBookByIdUsecase,
+          GetBookByIdUsecase,
+          GetBookByIdUsecase
+        >
+    with $Provider<GetBookByIdUsecase> {
   GetBookByIdProvider._()
     : super(
         from: null,
@@ -161,31 +172,37 @@ final class GetBookByIdProvider
 
   @$internal
   @override
-  $ProviderElement<GetBookById> $createElement($ProviderPointer pointer) =>
-      $ProviderElement(pointer);
+  $ProviderElement<GetBookByIdUsecase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
 
   @override
-  GetBookById create(Ref ref) {
+  GetBookByIdUsecase create(Ref ref) {
     return getBookById(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(GetBookById value) {
+  Override overrideWithValue(GetBookByIdUsecase value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<GetBookById>(value),
+      providerOverride: $SyncValueProvider<GetBookByIdUsecase>(value),
     );
   }
 }
 
-String _$getBookByIdHash() => r'c7ba2b8a3f09b63c5fb1403d15427f30732905c4';
+String _$getBookByIdHash() => r'7294e848504012b03952b6b4484164da1a535a66';
 
 @ProviderFor(searchBooks)
 final searchBooksProvider = SearchBooksProvider._();
 
 final class SearchBooksProvider
-    extends $FunctionalProvider<SearchBooks, SearchBooks, SearchBooks>
-    with $Provider<SearchBooks> {
+    extends
+        $FunctionalProvider<
+          SearchBooksUsecase,
+          SearchBooksUsecase,
+          SearchBooksUsecase
+        >
+    with $Provider<SearchBooksUsecase> {
   SearchBooksProvider._()
     : super(
         from: null,
@@ -202,24 +219,25 @@ final class SearchBooksProvider
 
   @$internal
   @override
-  $ProviderElement<SearchBooks> $createElement($ProviderPointer pointer) =>
-      $ProviderElement(pointer);
+  $ProviderElement<SearchBooksUsecase> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
 
   @override
-  SearchBooks create(Ref ref) {
+  SearchBooksUsecase create(Ref ref) {
     return searchBooks(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(SearchBooks value) {
+  Override overrideWithValue(SearchBooksUsecase value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<SearchBooks>(value),
+      providerOverride: $SyncValueProvider<SearchBooksUsecase>(value),
     );
   }
 }
 
-String _$searchBooksHash() => r'ab08c13e13f98f34acc1de8221f44d0cc04b3d94';
+String _$searchBooksHash() => r'98700ad8a34323516e0746e7faef07a3ad9ed174';
 
 @ProviderFor(booksList)
 final booksListProvider = BooksListProvider._();

@@ -4,15 +4,15 @@ import 'package:online_archive/core/error/failure.dart';
 import 'package:online_archive/core/usecases/usecase.dart';
 import 'package:online_archive/features/books/domain/repositories/book_repository.dart';
 
-/// Creates a book. Mirrors `POST /api/books`; returns the new book's id.
-class CreateBook implements UseCase<String, CreateBookParams> {
-  const CreateBook(this._repository);
+class UpdateBookUsecase implements UseCase<Unit, UpdateBookParams> {
+  const UpdateBookUsecase(this._repository);
 
   final BookRepository _repository;
 
   @override
-  Future<Either<Failure, String>> call(CreateBookParams params) {
-    return _repository.createBook(
+  Future<Either<Failure, Unit>> call(UpdateBookParams params) {
+    return _repository.updateBook(
+      id: params.id,
       title: params.title,
       author: params.author,
       isbn: params.isbn,
@@ -22,8 +22,9 @@ class CreateBook implements UseCase<String, CreateBookParams> {
   }
 }
 
-class CreateBookParams extends Equatable {
-  const CreateBookParams({
+class UpdateBookParams extends Equatable {
+  const UpdateBookParams({
+    required this.id,
     required this.title,
     required this.author,
     required this.isbn,
@@ -31,6 +32,7 @@ class CreateBookParams extends Equatable {
     required this.totalCopies,
   });
 
+  final String id;
   final String title;
   final String author;
   final String isbn;
@@ -39,6 +41,7 @@ class CreateBookParams extends Equatable {
 
   @override
   List<Object?> get props => [
+    id,
     title,
     author,
     isbn,

@@ -4,8 +4,8 @@ import 'package:online_archive/core/usecases/usecase.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 import 'package:online_archive/features/books/domain/repositories/book_repository.dart';
 
-class SearchBooks implements UseCase<List<Book>, String> {
-  const SearchBooks(this._repository);
+class SearchBooksUsecase implements UseCase<List<Book>, String> {
+  const SearchBooksUsecase(this._repository);
 
   final BookRepository _repository;
 

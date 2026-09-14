@@ -19,10 +19,6 @@ class Book extends BaseEntity {
   final int publishedYear;
   final int totalCopies;
   final int availableCopies;
-
-  /// Not part of the backend contract — the API's Book has neither an image
-  /// nor a description field. Nullable so a real API response (which won't
-  /// carry them) still maps.
   final String? coverImageUrl;
   final String? description;
 }

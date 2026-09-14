@@ -7,6 +7,7 @@ const bookCardGridDelegate = SliverGridDelegateWithMaxCrossAxisExtent(
   crossAxisSpacing: 16,
   childAspectRatio: 0.58,
 );
+
 class BookCard extends StatelessWidget {
   const BookCard({required this.book, this.onTap, super.key});
 

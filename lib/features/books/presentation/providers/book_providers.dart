@@ -2,9 +2,9 @@ import 'package:online_archive/core/usecases/usecase.dart';
 import 'package:online_archive/features/books/data/datasources/book_local_datasource.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 import 'package:online_archive/features/books/domain/repositories/book_repository.dart';
-import 'package:online_archive/features/books/domain/usecases/get_all_books.dart';
-import 'package:online_archive/features/books/domain/usecases/get_book_by_id.dart';
-import 'package:online_archive/features/books/domain/usecases/search_books.dart';
+import 'package:online_archive/features/books/domain/usecases/get_all_books_usecase.dart';
+import 'package:online_archive/features/books/domain/usecases/get_book_by_id_usecase.dart';
+import 'package:online_archive/features/books/domain/usecases/search_books_usecase.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/repositories/book_repository_impl.dart';
@@ -22,18 +22,18 @@ BookRepository bookRepository(Ref ref) {
 }
 
 @riverpod
-GetAllBooks getAllBooks(Ref ref) {
-  return GetAllBooks(ref.watch(bookRepositoryProvider));
+GetAllBooksUsecase getAllBooks(Ref ref) {
+  return GetAllBooksUsecase(ref.watch(bookRepositoryProvider));
 }
 
 @riverpod
-GetBookById getBookById(Ref ref) {
-  return GetBookById(ref.watch(bookRepositoryProvider));
+GetBookByIdUsecase getBookById(Ref ref) {
+  return GetBookByIdUsecase(ref.watch(bookRepositoryProvider));
 }
 
 @riverpod
-SearchBooks searchBooks(Ref ref) {
-  return SearchBooks(ref.watch(bookRepositoryProvider));
+SearchBooksUsecase searchBooks(Ref ref) {
+  return SearchBooksUsecase(ref.watch(bookRepositoryProvider));
 }
 
 @riverpod
