@@ -1,0 +1,47 @@
+[
+  {
+    "id": "018f2f3a-1b1e-7c3a-8b1a-200000000001",
+    "bookId": "018f2f3a-1b1e-7c3a-8b1a-000000000003",
+    "memberId": "018f2f3a-1b1e-7c3a-8b1a-100000000001",
+    "borrowedDate": "2026-09-04T09:00:00Z",
+    "dueDate": "2026-09-18T09:00:00Z",
+    "returnedDate": null,
+    "status": 0
+  },
+  {
+    "id": "018f2f3a-1b1e-7c3a-8b1a-200000000002",
+    "bookId": "018f2f3a-1b1e-7c3a-8b1a-000000000004",
+    "memberId": "018f2f3a-1b1e-7c3a-8b1a-100000000001",
+    "borrowedDate": "2026-08-25T09:00:00Z",
+    "dueDate": "2026-09-08T09:00:00Z",
+    "returnedDate": null,
+    "status": 0
+  },
+  {
+    "id": "018f2f3a-1b1e-7c3a-8b1a-200000000003",
+    "bookId": "018f2f3a-1b1e-7c3a-8b1a-000000000001",
+    "memberId": "018f2f3a-1b1e-7c3a-8b1a-100000000001",
+    "borrowedDate": "2026-07-10T09:00:00Z",
+    "dueDate": "2026-07-24T09:00:00Z",
+    "returnedDate": "2026-07-20T14:32:00Z",
+    "status": 1
+  },
+  {
+    "id": "018f2f3a-1b1e-7c3a-8b1a-200000000004",
+    "bookId": "018f2f3a-1b1e-7c3a-8b1a-000000000002",
+    "memberId": "018f2f3a-1b1e-7c3a-8b1a-100000000001",
+    "borrowedDate": "2026-06-01T09:00:00Z",
+    "dueDate": "2026-06-15T09:00:00Z",
+    "returnedDate": "2026-06-14T11:05:00Z",
+    "status": 1
+  },
+  {
+    "id": "018f2f3a-1b1e-7c3a-8b1a-200000000005",
+    "bookId": "018f2f3a-1b1e-7c3a-8b1a-000000000005",
+    "memberId": "018f2f3a-1b1e-7c3a-8b1a-100000000001",
+    "borrowedDate": "2026-05-02T09:00:00Z",
+    "dueDate": "2026-05-16T09:00:00Z",
+    "returnedDate": "2026-05-20T16:45:00Z",
+    "status": 1
+  }
+]

@@ -64,7 +64,7 @@ Future<Book> bookDetails(Ref ref, String bookId) async {
 
 @riverpod
 Future<List<Book>> bookSearchResults(Ref ref, String query) async {
-  await Future<void>.delayed(const Duration(milliseconds: 500));
+  await Future<void>.delayed(const Duration(seconds: 3));
 
   final searchBooks = ref.watch(searchBooksProvider);
   final result = await searchBooks(query);
