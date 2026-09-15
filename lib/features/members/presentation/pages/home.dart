@@ -4,9 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:online_archive/core/constants/app_assets.dart';
 import 'package:online_archive/features/borrowings/domain/entities/enums/borrowing_status.dart';
 import 'package:online_archive/features/borrowings/presentation/providers/borrowing_providers.dart';
+import 'package:online_archive/features/borrowings/presentation/widgets/borrowing_card.dart';
 import 'package:online_archive/features/members/presentation/providers/member_providers.dart';
-
-import '../widgets/borrowing_card.dart';
 
 class Home extends ConsumerWidget {
   const Home({super.key});

@@ -29,7 +29,7 @@ class BorrowingCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _BookCover(url: book.coverImageUrl),
+              BookCoverThumbnail(url: book.coverImageUrl),
               const SizedBox(width: 16),
               Expanded(
                 child: Column(
@@ -79,8 +79,8 @@ class BorrowingCard extends StatelessWidget {
   }
 }
 
-class _BookCover extends StatelessWidget {
-  const _BookCover({required this.url});
+class BookCoverThumbnail extends StatelessWidget {
+  const BookCoverThumbnail({required this.url, super.key});
 
   final String? url;
 
