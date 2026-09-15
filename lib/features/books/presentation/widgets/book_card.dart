@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 
-const bookCardGridDelegate = SliverGridDelegateWithMaxCrossAxisExtent(
-  maxCrossAxisExtent: 200,
-  mainAxisSpacing: 16,
-  crossAxisSpacing: 16,
-  childAspectRatio: 0.58,
-);
-
 class BookCard extends StatelessWidget {
   const BookCard({required this.book, this.onTap, super.key});
 

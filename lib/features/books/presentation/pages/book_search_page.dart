@@ -123,7 +123,12 @@ class _BookSearchContent extends StatelessWidget {
             24,
           ),
           sliver: SliverGrid.builder(
-            gridDelegate: bookCardGridDelegate,
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
+              childAspectRatio: 0.58,
+            ),
             itemCount: books.length,
             itemBuilder: (context, index) => BookCard(
               book: books[index],

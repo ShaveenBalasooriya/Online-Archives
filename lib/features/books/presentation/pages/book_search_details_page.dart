@@ -7,8 +7,6 @@ import 'package:online_archive/features/books/presentation/providers/book_provid
 import 'package:online_archive/features/books/presentation/widgets/book_card.dart';
 import 'package:online_archive/features/books/presentation/widgets/book_search_bar.dart';
 
-const _horizontalPadding = 16.0;
-
 class BookSearchDetailsPage extends ConsumerWidget {
   const BookSearchDetailsPage({required this.query, super.key});
 
@@ -36,12 +34,7 @@ class BookSearchDetailsPage extends ConsumerWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(
-              _horizontalPadding,
-              0,
-              _horizontalPadding,
-              8,
-            ),
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
             child: BookSearchBar(
               initialQuery: query,
               onSubmitted: (newQuery) =>
@@ -53,7 +46,7 @@ class BookSearchDetailsPage extends ConsumerWidget {
               loading: () => const Center(child: CircularProgressIndicator()),
               error: (error, stackTrace) => Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(_horizontalPadding),
+                  padding: const EdgeInsets.all(16),
                   child: Text(
                     'Search failed: $error',
                     textAlign: TextAlign.center,
@@ -85,12 +78,7 @@ class _ResultsGrid extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(
-            _horizontalPadding,
-            8,
-            _horizontalPadding,
-            12,
-          ),
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
           child: Text(
             '${books.length} ${books.length == 1 ? 'result' : 'results'} '
             'for "$query"',
@@ -103,13 +91,13 @@ class _ResultsGrid extends StatelessWidget {
         ),
         Expanded(
           child: GridView.builder(
-            padding: const EdgeInsets.fromLTRB(
-              _horizontalPadding,
-              0,
-              _horizontalPadding,
-              _horizontalPadding,
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
+              childAspectRatio: 0.58,
             ),
-            gridDelegate: bookCardGridDelegate,
             itemCount: books.length,
             itemBuilder: (context, index) => BookCard(
               book: books[index],

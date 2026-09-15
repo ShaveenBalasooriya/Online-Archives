@@ -4,9 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:online_archive/features/books/domain/entities/book.dart';
 import 'package:online_archive/features/books/presentation/providers/book_providers.dart';
 
-const _horizontalPadding = 16.0;
-const _coverWidth = 200.0;
-
 class BookDetailsPage extends ConsumerWidget {
   const BookDetailsPage({required this.bookId, super.key});
 
@@ -26,7 +23,7 @@ class BookDetailsPage extends ConsumerWidget {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (error, stackTrace) => Center(
           child: Padding(
-            padding: const EdgeInsets.all(_horizontalPadding),
+            padding: const EdgeInsets.all(16),
             child: Text(
               'Failed to load this book: $error',
               textAlign: TextAlign.center,
@@ -53,12 +50,7 @@ class _BookDetails extends StatelessWidget {
       children: [
         Expanded(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(
-              _horizontalPadding,
-              0,
-              _horizontalPadding,
-              24,
-            ),
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -115,7 +107,7 @@ class _BorrowBar extends StatelessWidget {
       child: SafeArea(
         top: false,
         child: Padding(
-          padding: const EdgeInsets.all(_horizontalPadding),
+          padding: const EdgeInsets.all(16),
           child: FilledButton(
             style: FilledButton.styleFrom(
               minimumSize: const Size.fromHeight(56),
@@ -211,7 +203,7 @@ class _BookCover extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: SizedBox(
-        width: _coverWidth,
+        width: 200,
         child: AspectRatio(
           aspectRatio: 3 / 4,
           child: url == null
