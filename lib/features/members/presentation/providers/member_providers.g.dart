@@ -9,6 +9,47 @@ part of 'member_providers.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
+@ProviderFor(currentMemberId)
+final currentMemberIdProvider = CurrentMemberIdProvider._();
+
+final class CurrentMemberIdProvider
+    extends $FunctionalProvider<String, String, String>
+    with $Provider<String> {
+  CurrentMemberIdProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'currentMemberIdProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$currentMemberIdHash();
+
+  @$internal
+  @override
+  $ProviderElement<String> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  String create(Ref ref) {
+    return currentMemberId(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(String value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<String>(value),
+    );
+  }
+}
+
+String _$currentMemberIdHash() => r'dee649e096c1fa3c2181ebe515b07f622537a368';
+
 @ProviderFor(memberLocalDataSource)
 final memberLocalDataSourceProvider = MemberLocalDataSourceProvider._();
 
@@ -196,3 +237,72 @@ final class UpdateMemberProvider
 }
 
 String _$updateMemberHash() => r'b58b1c4724f22008157622dbeea3930fd7116b79';
+
+@ProviderFor(memberDetails)
+final memberDetailsProvider = MemberDetailsFamily._();
+
+final class MemberDetailsProvider
+    extends $FunctionalProvider<AsyncValue<Member>, Member, FutureOr<Member>>
+    with $FutureModifier<Member>, $FutureProvider<Member> {
+  MemberDetailsProvider._({
+    required MemberDetailsFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'memberDetailsProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$memberDetailsHash();
+
+  @override
+  String toString() {
+    return r'memberDetailsProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $FutureProviderElement<Member> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<Member> create(Ref ref) {
+    final argument = this.argument as String;
+    return memberDetails(ref, argument);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is MemberDetailsProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$memberDetailsHash() => r'3aebf9775084c6c9c73aa2d0eab24eb42f249190';
+
+final class MemberDetailsFamily extends $Family
+    with $FunctionalFamilyOverride<FutureOr<Member>, String> {
+  MemberDetailsFamily._()
+    : super(
+        retry: null,
+        name: r'memberDetailsProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  MemberDetailsProvider call(String memberId) =>
+      MemberDetailsProvider._(argument: memberId, from: this);
+
+  @override
+  String toString() => r'memberDetailsProvider';
+}

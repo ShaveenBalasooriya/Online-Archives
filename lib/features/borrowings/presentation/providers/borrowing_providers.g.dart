@@ -293,3 +293,172 @@ final class MarkOverdueProvider
 }
 
 String _$markOverdueHash() => r'254f460b80aefdf06c1ad3f017b4cb3922bdba6a';
+
+@ProviderFor(borrowingsByMember)
+final borrowingsByMemberProvider = BorrowingsByMemberFamily._();
+
+final class BorrowingsByMemberProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<Borrowing>>,
+          List<Borrowing>,
+          FutureOr<List<Borrowing>>
+        >
+    with $FutureModifier<List<Borrowing>>, $FutureProvider<List<Borrowing>> {
+  BorrowingsByMemberProvider._({
+    required BorrowingsByMemberFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'borrowingsByMemberProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$borrowingsByMemberHash();
+
+  @override
+  String toString() {
+    return r'borrowingsByMemberProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $FutureProviderElement<List<Borrowing>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<Borrowing>> create(Ref ref) {
+    final argument = this.argument as String;
+    return borrowingsByMember(ref, argument);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is BorrowingsByMemberProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$borrowingsByMemberHash() =>
+    r'113b07616362563195f887b100802b84a0ee7069';
+
+final class BorrowingsByMemberFamily extends $Family
+    with $FunctionalFamilyOverride<FutureOr<List<Borrowing>>, String> {
+  BorrowingsByMemberFamily._()
+    : super(
+        retry: null,
+        name: r'borrowingsByMemberProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  BorrowingsByMemberProvider call(String memberId) =>
+      BorrowingsByMemberProvider._(argument: memberId, from: this);
+
+  @override
+  String toString() => r'borrowingsByMemberProvider';
+}
+
+/// A member's borrowings paired with their books, loaded together so the UI
+/// can show one spinner for the whole list instead of one per card.
+
+@ProviderFor(memberBorrowingsWithBooks)
+final memberBorrowingsWithBooksProvider = MemberBorrowingsWithBooksFamily._();
+
+/// A member's borrowings paired with their books, loaded together so the UI
+/// can show one spinner for the whole list instead of one per card.
+
+final class MemberBorrowingsWithBooksProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<BorrowingWithBook>>,
+          List<BorrowingWithBook>,
+          FutureOr<List<BorrowingWithBook>>
+        >
+    with
+        $FutureModifier<List<BorrowingWithBook>>,
+        $FutureProvider<List<BorrowingWithBook>> {
+  /// A member's borrowings paired with their books, loaded together so the UI
+  /// can show one spinner for the whole list instead of one per card.
+  MemberBorrowingsWithBooksProvider._({
+    required MemberBorrowingsWithBooksFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'memberBorrowingsWithBooksProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$memberBorrowingsWithBooksHash();
+
+  @override
+  String toString() {
+    return r'memberBorrowingsWithBooksProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $FutureProviderElement<List<BorrowingWithBook>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<BorrowingWithBook>> create(Ref ref) {
+    final argument = this.argument as String;
+    return memberBorrowingsWithBooks(ref, argument);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is MemberBorrowingsWithBooksProvider &&
+        other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$memberBorrowingsWithBooksHash() =>
+    r'14d0d9e05a3adb8e8666ba32afd1ea05ec2072a2';
+
+/// A member's borrowings paired with their books, loaded together so the UI
+/// can show one spinner for the whole list instead of one per card.
+
+final class MemberBorrowingsWithBooksFamily extends $Family
+    with $FunctionalFamilyOverride<FutureOr<List<BorrowingWithBook>>, String> {
+  MemberBorrowingsWithBooksFamily._()
+    : super(
+        retry: null,
+        name: r'memberBorrowingsWithBooksProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  /// A member's borrowings paired with their books, loaded together so the UI
+  /// can show one spinner for the whole list instead of one per card.
+
+  MemberBorrowingsWithBooksProvider call(String memberId) =>
+      MemberBorrowingsWithBooksProvider._(argument: memberId, from: this);
+
+  @override
+  String toString() => r'memberBorrowingsWithBooksProvider';
+}
